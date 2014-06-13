@@ -1,4 +1,4 @@
 alt
 ===
 
-alt module for 'start'
+Module with interfaces and calculators for various altera ip's
