@@ -14,7 +14,7 @@ from .firfilt import Firfilt, taps_dec
 import pylab
 try:
     import scipy.signal as signal
-except:
+else:
     signal = None
 
 class Fircalc(Firfilt):
