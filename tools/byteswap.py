@@ -75,3 +75,6 @@ class Byteswap(Control):
         fo.close()
         return True
 
+if __name__ == '__main__':
+    Byteswap().mainloop()
+

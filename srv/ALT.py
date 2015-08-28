@@ -20,7 +20,7 @@ def uart(ip_addr, cmd, *args):
 
 def ALT_alt_uart(ip_addr='192.168.0.203', cmd='', *args):
     '''
-    ALT JTAG UART io
+    ALT UART io
     '''
     if cmd == '':
         return ''
@@ -91,13 +91,10 @@ def ALT_pio(ip_addr='192.168.0.1', altname='pio_led', val=''):
     '''
     Read PIO_IN, Write PIO_OUT
     '''
-    addr = ALT_find(ip_addr, altname)
-    if addr in ['', None]:
-        return ''
-    if val == '':
-        return '%d' % int(uart(ip_addr, 'mr %s' % addr), 16)
+    if not val:
+        return '%d' % int(uart(ip_addr, 'mr %s' % altname), 16)
     else:
-        return '%d' % int(uart(ip_addr, 'mw %s %s' % (addr, val)), 16)
+        return '%d' % int(uart(ip_addr, 'mw %s %s' % (altname, val)), 16)
 
 def ALT_sgdma(ip_addr='192.168.0.1', altname='sgdma_0', cmd='desc 0 0', *args):
     '''
