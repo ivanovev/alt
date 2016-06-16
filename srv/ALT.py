@@ -1,6 +1,4 @@
 
-#from . import sc
-#from . import at
 from util.server import proxy
 from util.socketio import get_fsz, update_progress, chunks
 from binascii import hexlify, unhexlify

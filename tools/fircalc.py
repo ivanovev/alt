@@ -7,8 +7,7 @@ from copy import deepcopy
 from math import ceil
 from numpy import arange
 
-from util.control import Control
-from util import Data
+from util import Data, Control
 from .firfilt import Firfilt, taps_dec
 
 import pylab

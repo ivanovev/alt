@@ -2,8 +2,7 @@
 
 import tkinter as tk
 from tkinter import messagebox
-from util.control import Control
-from util import Data
+from util import Data, Control
 
 class Byteswap(Control):
     def __init__(self, parent=None):

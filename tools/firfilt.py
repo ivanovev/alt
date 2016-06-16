@@ -9,8 +9,7 @@ from matplotlib.figure import Figure
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2TkAgg
 from numpy import arange, sin, pi
 
-from util.control import Control
-from util import Data
+from util import Data, Control
 
 try:
     import scipy.signal as signal
