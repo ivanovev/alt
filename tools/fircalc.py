@@ -7,7 +7,7 @@ from copy import deepcopy
 from math import ceil
 from numpy import arange
 
-from util import Data, Control
+from util import Data, Control, MyAIO, proxy
 from .firfilt import Firfilt, taps_dec
 
 import pylab
@@ -24,8 +24,8 @@ class Fircalc(Firfilt):
         Firfilt.__init__(self, dev=dev, parent=parent, title=title)
 
     def init_io(self):
-        del self.io[:]
-        self.io.add(self.fircalc_cb1, self.fircalc_cb2, self.fircalc_cb3, self.cmdio_thread)
+        self.io = MyAIO(self)
+        self.io.add(self.fircalc_cb1, self.fircalc_cb2, self.fircalc_cb3, proxy.io_cb)
 
     def init_custom_layout(self):
         self.plot_add('Frequency/Phase', self.plot_init_mfreqz, self.plot_upd_mfreqz)
